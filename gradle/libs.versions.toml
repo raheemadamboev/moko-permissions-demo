@@ -1,0 +1,31 @@
+[versions]
+
+compose-activity = "1.9.2"
+compose-lifecycle = "2.8.2"
+compose-viewmodel = "2.8.2"
+viewmodel = "2.8.6"
+moko = "0.18.0"
+
+kotlin = "2.0.20"
+android = "8.6.1"
+compose = "1.6.11"
+
+sdk-min = "24"
+sdk-compile = "34"
+sdk-target = "34"
+
+[libraries]
+
+compose-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "compose-activity" }
+compose-lifecycle = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "compose-lifecycle" }
+compose-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "compose-viewmodel" }
+viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "viewmodel" }
+moko-permissions = { group = "dev.icerock.moko", name = "permissions", version.ref = "moko" }
+moko-permissions-compose = { group = "dev.icerock.moko", name = "permissions-compose", version.ref = "moko" }
+
+[plugins]
+
+kotlin = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+android = { id = "com.android.application", version.ref = "android" }
+compose = { id = "org.jetbrains.compose", version.ref = "compose" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
