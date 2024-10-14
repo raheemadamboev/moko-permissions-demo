@@ -31,7 +31,7 @@ class AppViewModel(
         }
     }
 
-    fun onRequestRecordAudioPermission() {
+    fun onRequestPermission() {
         viewModelScope.launch {
             if (state == PermissionState.DeniedAlways) {
                 controller.openAppSettings()
@@ -44,7 +44,7 @@ class AppViewModel(
                     state = PermissionState.DeniedAlways
                     // 100 milliseconds enough time to know that permission was denied always, since dialog won't be shown
                     // i believe user can't deny the permission in less than 100 milliseconds
-                    if (time.elapsedNow().inWholeMilliseconds < 100) onRequestRecordAudioPermission()
+                    if (time.elapsedNow().inWholeMilliseconds < 100) onRequestPermission()
                 } catch (e: DeniedException) {
                     state = PermissionState.Denied
                 } catch (e: RequestCanceledException) {
